@@ -16,13 +16,20 @@
  * Adds a random greeting to the page.
  */
 function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+  const quotes =
+      ['\“I find your lack of faith disturbing.\” — Darth Vader', 
+      '\“Never tell me the odds!\” — Han Solo', 
+      '\“Do. Or do not. There is no try.\” — Yoda', 
+      '\“Fear is the path to the dark side. Fear leads \
+      to anger; anger leads to hate; hate leads to suffering. \
+      I sense much fear in you.\” — Yoda', '\“If you define yourself \
+      by your power to take life, your desire to dominate, to \
+      possess, then you have nothing.\” — Obi-Wan Kenobi'];
 
   // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+  const quote = quotes[Math.floor(Math.random() * quotes.length)];
 
   // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+  const quoteContainer = document.getElementById('quote-container');
+  quoteContainer.innerText = quote;
 }

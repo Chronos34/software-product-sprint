@@ -33,3 +33,13 @@ function addRandomGreeting() {
   const quoteContainer = document.getElementById('quote-container');
   quoteContainer.innerText = quote;
 }
+
+async function welcomeMessage() {
+
+    const response = await fetch('/hello');
+    const messages = await response.json(); 
+    const randomMessage = messages[Math.floor(Math.random() * response.length)];
+
+    const messageContainer = document.getElementById('star');
+    messageContainer.innerText = randomMessage;
+}

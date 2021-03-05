@@ -36,9 +36,9 @@ function addRandomGreeting() {
 
 async function welcomeMessage() {
 
-    const message = await fetch('/hello');
-    const response = await message.json(); 
-    const randomMessage = response[Math.floor(Math.random() * response.length)];
+    const response = await fetch('/hello');
+    const messages = await response.json(); 
+    const randomMessage = messages[Math.floor(Math.random() * response.length)];
 
     const messageContainer = document.getElementById('star');
     messageContainer.innerText = randomMessage;

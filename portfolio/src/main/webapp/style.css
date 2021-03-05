@@ -10,4 +10,8 @@
 
 #quote-container { padding: 10px; }
 
+#star {
+    font-style: oblique;
+}
+
 button { padding: 10px; }

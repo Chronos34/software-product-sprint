@@ -33,3 +33,10 @@ function addRandomGreeting() {
   const quoteContainer = document.getElementById('quote-container');
   quoteContainer.innerText = quote;
 }
+
+async function welcomeMessage() {
+    const message = await fetch('/hello');
+
+    const messageContainer = document.getElementById('star');
+    messageContainer.innerText = (await message.text()).replace('\n', '');
+}

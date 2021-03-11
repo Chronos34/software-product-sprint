@@ -38,7 +38,7 @@ async function welcomeMessage() {
 
     const response = await fetch('/hello');
     const messages = await response.json();
-    const randomMessage = messages[Math.floor(Math.random() * response.length)];
+    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
 
     const messageContainer = document.getElementById('star');
     messageContainer.innerText = randomMessage;
@@ -46,11 +46,17 @@ async function welcomeMessage() {
 
 async function analyzeMessage() {
 
+    /**
+     * The parameters object is responsible for
+     * sending the user's messages to the form handler
+     * servlet. This makes it easier to generate warnings
+     * for abusive users based on how low the sentiment
+     * score is.
+     */
     const message = document.getElementById("message").value;
-    alert(5);
     const parameters = new URLSearchParams();
     parameters.append("text-input", message);
 
-    const response = await fetch('/form-handler', {method: 'POST', body: params});
-    console.log(response);
+    const response = await fetch('/form-handler', {method: 'POST', body: parameters});
+    console.log(response.text().trim());
 }

@@ -34,6 +34,7 @@ function addRandomGreeting() {
   quoteContainer.innerText = quote;
 }
 
+
 async function welcomeMessage() {
 
     const response = await fetch('/hello');
@@ -43,6 +44,7 @@ async function welcomeMessage() {
     const messageContainer = document.getElementById('star');
     messageContainer.innerText = randomMessage;
 }
+
 
 async function analyzeMessage() {
 
@@ -60,3 +62,4 @@ async function analyzeMessage() {
     const response = await fetch('/form-handler', {method: 'POST', body: parameters});
     console.log(response.text().trim());
 }
+

@@ -16,7 +16,9 @@ public class HelloWorldServlet extends HttpServlet {
     private final Gson gson = new Gson();
     private final ArrayList<String> message = new ArrayList<String>(
         Arrays.asList("Welcome To Fortress Inquisitorius!",
-        "It's a beautiful day!", "Have a Starsome Day!"));
+        "It's a beautiful day!",
+        "Have a Starsome Day!"
+        ));
 
   @Override
   public void doGet(final HttpServletRequest request, final HttpServletResponse response) throws IOException {
